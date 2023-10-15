@@ -2,7 +2,7 @@ package stats
 
 import "github.com/jeremycruzz/msds301-wk4.git/internal/common"
 
-// Service provides methods for reading and writing census block data to a csv
+// Service provides methods for analyzing block data
 type Service interface {
 
 	// Analyze takes in a Block slice and calculates count, mean, std, min, 25%, median, 75%, and max for each block field.
@@ -12,3 +12,8 @@ type Service interface {
 }
 
 type service struct{}
+
+// Create Service creates a stats service.
+func CreateService() service {
+	return service{}
+}

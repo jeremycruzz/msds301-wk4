@@ -1,4 +1,4 @@
-package stats
+package file
 
 import "github.com/jeremycruzz/msds301-wk4.git/internal/common"
 
@@ -9,7 +9,14 @@ type Service interface {
 	// It returns a slice of blocks and an error if any occur.
 	Read(filepath string) ([]common.Block, error)
 
-	// Write takes in a slice of Blocks and a filepath.
+	// Write takes in a map of blocks and a filepath.
 	// It returns an error if any occur.
-	Write(blocks []common.Block, filepath string) error
+	Write(results map[string]common.Block, filepath string) error
+}
+
+type service struct{}
+
+// Create Service returns a file service.
+func CreateService() service {
+	return service{}
 }
