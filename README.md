@@ -72,7 +72,7 @@ I implemented a version with less transformations to the data and was quite disa
 <details>
 <summary>Results from fast implementation 2</summary>
 
-| Metric               | Test Run 1 (nanoseconds) | Test Run 2 (nanoseconds) | Test Run 3 (nanoseconds) | Test Run 4 (nanoseconds) |
+| Language               | Test Run 1 (nanoseconds) | Test Run 2 (nanoseconds) | Test Run 3 (nanoseconds) | Test Run 4 (nanoseconds) |
 |----------------------|---------------------------|---------------------------|---------------------------|---------------------------|
 | Go                   |       3,728,930,100       |       3,736,011,000       |       3,730,175,700       |       3,742,231,500       |
 | Go (fast)            |       3,424,380,500       |       3,420,223,500       |       3,419,356,100       |       3,437,085,350       |
@@ -89,7 +89,7 @@ I implemented two more version removing the tab writer and was still disapointed
 <details>
 <summary>Results from fast implementation without printing</summary>
 
-| Metric               | Test Run 1 (nanoseconds) | Test Run 2 (nanoseconds) | Test Run 3 (nanoseconds) | Test Run 4 (nanoseconds) |
+| Language               | Test Run 1 (nanoseconds) | Test Run 2 (nanoseconds) | Test Run 3 (nanoseconds) | Test Run 4 (nanoseconds) |
 |----------------------|---------------------------|---------------------------|---------------------------|---------------------------|
 | Go                   |       3,793,349,200       |       3,734,792,700       |       3,739,142,000       |       3,746,888,200       |
 | Go (fast)            |       3,497,688,700       |       3,449,193,200       |       3,450,075,600       |       3,456,628,600       |
