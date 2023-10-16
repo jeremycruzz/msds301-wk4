@@ -156,7 +156,7 @@ func analyze(blocks blocks) map[string][]float64 {
 
 func write(data map[string][]float64) {
 	// give permissions (6) to everyone
-	file, err := os.OpenFile("./data/benchmark/housesOutputGoFast.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("./data/benchmark/housesOutputGoFaster.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		panic(err)
 	}

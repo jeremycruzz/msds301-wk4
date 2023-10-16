@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/app"
@@ -24,14 +23,9 @@ func main() {
 		writeTo = args[1]
 	}
 
-	fmt.Println(n)
-	fmt.Println("Reading data from:\t\t" + readFrom)
-	fmt.Println("Writing data to:\t\t" + writeTo)
-
 	app := app.Create(readFrom, writeTo)
 
 	for i := 0; i < n; i++ {
 		app.Run()
 	}
-	fmt.Println("complete!")
 }

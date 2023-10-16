@@ -37,7 +37,7 @@ do
    total_time_go_faster=$((total_time_go_faster + end_time_go_faster - start_time_go_faster))
 
    # Go Fastest
-   start_time_go_fast=$(date +%s%N)
+   start_time_go_fastest=$(date +%s%N)
    ./houseanalyzerfastest.exe
    end_time_go_fastest=$(date +%s%N)
    total_time_go_fastest=$((total_time_go_fastest + end_time_go_fastest - start_time_go_fastest))
