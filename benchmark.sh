@@ -11,6 +11,8 @@ num_runs=$1
 
 total_time_go=0
 total_time_go_fast=0
+total_time_go_faster=0
+total_time_go_fastest=0
 total_time_python=0
 total_time_r=0
 
@@ -26,7 +28,19 @@ do
    start_time_go_fast=$(date +%s%N)
    ./houseanalyzerfast.exe
    end_time_go_fast=$(date +%s%N)
-   total_time_go=$((total_time_go_fast + end_time_go - start_time_go))
+   total_time_go_fast=$((total_time_go_fast + end_time_go_fast - start_time_go_fast))
+
+   # Go Faster
+   start_time_go_faster=$(date +%s%N)
+   ./houseanalyzerfaster.exe
+   end_time_go_faster=$(date +%s%N)
+   total_time_go_faster=$((total_time_go_faster + end_time_go_faster - start_time_go_faster))
+
+   # Go Fastest
+   start_time_go_fast=$(date +%s%N)
+   ./houseanalyzerfastest.exe
+   end_time_go_fastest=$(date +%s%N)
+   total_time_go_fastest=$((total_time_go_fastest + end_time_go_fastest - start_time_go_fastest))
 
    # Python
    start_time_python=$(date +%s%N)
@@ -44,10 +58,14 @@ done
 # Calculate the averages
 avg_time_go=$((total_time_go / num_runs))
 avg_time_go_fast=$((total_time_go_fast / num_runs))
+avg_time_go_faster=$((total_time_go_faster / num_runs))
+avg_time_go_fastest=$((total_time_go_fastest / num_runs))
 avg_time_python=$((total_time_python / num_runs))
 avg_time_r=$((total_time_r / num_runs))
 
 echo "Average time for Go: $avg_time_go nanoseconds"
 echo "Average time for Go (fast): $avg_time_go_fast nanoseconds"
+echo "Average time for Go (faster): $avg_time_go_faster nanoseconds"
+echo "Average time for Go (fastest): $avg_time_go_fastest nanoseconds"
 echo "Average time for Python: $avg_time_python nanoseconds"
 echo "Average time for R: $avg_time_r nanoseconds"
