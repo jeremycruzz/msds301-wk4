@@ -7,9 +7,9 @@ import (
 	. "github.com/onsi/gomega"
 
 	"github.com/golang/mock/gomock"
-	"github.com/jeremycruzz/msds301-wk4.git/internal/app"
-	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
-	"github.com/jeremycruzz/msds301-wk4.git/internal/mocks"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/app"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/mocks"
 )
 
 var _ = Describe("app", func() {

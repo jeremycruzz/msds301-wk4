@@ -1,7 +1,7 @@
 //go:generate mockgen -source=service.go -destination=../mocks/file_mock.go -package=mocks -mock_names=Service=File
 package file
 
-import "github.com/jeremycruzz/msds301-wk4.git/internal/common"
+import "github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
 
 // Service provides methods for reading and writing census block data to a csv
 type Service interface {

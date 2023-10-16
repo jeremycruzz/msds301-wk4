@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
 )
 
 func (s service) Read() ([]common.Block, error) {

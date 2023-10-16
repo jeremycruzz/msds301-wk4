@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jeremycruzz/msds301-wk4.git/internal/app"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/app"
 )
 
 func main() {

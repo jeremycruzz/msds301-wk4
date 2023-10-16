@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/jeremycruzz/msds301-wk4.git/internal/file"
-	"github.com/jeremycruzz/msds301-wk4.git/internal/stats"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/file"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/stats"
 )
 
 type app struct {

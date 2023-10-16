@@ -5,7 +5,7 @@ import (
 	"os"
 	"text/tabwriter"
 
-	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
 )
 
 func (s service) Write(results map[string]common.Block) error {

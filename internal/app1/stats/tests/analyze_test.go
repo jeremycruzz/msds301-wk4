@@ -4,8 +4,8 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
-	"github.com/jeremycruzz/msds301-wk4.git/internal/stats"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/stats"
 )
 
 var _ = Describe("Analyze", func() {

@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
+	"github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
 	"github.com/montanaflynn/stats"
 )
 

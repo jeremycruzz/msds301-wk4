@@ -1,7 +1,7 @@
 //go:generate mockgen -source=service.go -destination=../mocks/stats_mock.go -package=mocks -mock_names=Service=Stats
 package stats
 
-import "github.com/jeremycruzz/msds301-wk4.git/internal/common"
+import "github.com/jeremycruzz/msds301-wk4.git/internal/app1/common"
 
 // Service provides methods for analyzing block data
 type Service interface {

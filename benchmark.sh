@@ -10,6 +10,7 @@ fi
 num_runs=$1
 
 total_time_go=0
+total_time_go_fast=0
 total_time_python=0
 total_time_r=0
 
@@ -20,6 +21,12 @@ do
    ./houseanalyzer.exe ./data/housesInput.csv ./data/benchmark/housesOutputGo.txt
    end_time_go=$(date +%s%N)
    total_time_go=$((total_time_go + end_time_go - start_time_go))
+
+   # Go Fast
+   start_time_go_fast=$(date +%s%N)
+   ./houseanalyzerfast.exe
+   end_time_go_fast=$(date +%s%N)
+   total_time_go=$((total_time_go_fast + end_time_go - start_time_go))
 
    # Python
    start_time_python=$(date +%s%N)
@@ -36,9 +43,11 @@ done
 
 # Calculate the averages
 avg_time_go=$((total_time_go / num_runs))
+avg_time_go_fast=$((total_time_go_fast / num_runs))
 avg_time_python=$((total_time_python / num_runs))
 avg_time_r=$((total_time_r / num_runs))
 
 echo "Average time for Go: $avg_time_go nanoseconds"
+echo "Average time for Go (fast): $avg_time_go_fast nanoseconds"
 echo "Average time for Python: $avg_time_python nanoseconds"
 echo "Average time for R: $avg_time_r nanoseconds"
