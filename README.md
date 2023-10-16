@@ -18,7 +18,7 @@
 - Run `go build -o houseanalyzerfastest.exe ./cmd/houseanalyzerfastest`
 
 ### Running Go executable
-- Run `./houseanalyzer.exe {READFILE} {WRITEFILE}`
+- Run `./houseanalyzer.exe {READFILE} {WRITEFILE}` NOTE: arguments are optional
 - Example `./houseanalyzer.exe ./data/housesInput.csv ./data/housesOutGo.txt`
 
 - Run `./houseanalyzerfast.exe`
