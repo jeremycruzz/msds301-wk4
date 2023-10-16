@@ -1,8 +1,6 @@
 package app
 
 import (
-	"fmt"
-
 	"github.com/jeremycruzz/msds301-wk4.git/internal/file"
 	"github.com/jeremycruzz/msds301-wk4.git/internal/stats"
 )
@@ -27,23 +25,19 @@ func CreateApp(fs file.Service, ss stats.Service) app {
 
 func (a app) Run() {
 
-	fmt.Println("Reading file...")
 	housingData, err := a.file.Read()
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("Analyzing data...")
 	statistics, err := a.stats.Analyze(housingData)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("Writing file...")
 	err = a.file.Write(statistics)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("Complete!")
 }

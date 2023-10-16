@@ -17,7 +17,7 @@ for i in $(seq 1 $num_runs)
 do
    # Go
    start_time_go=$(date +%s%N)
-   ./houseanalyzer.exe ../data/housesInput.csv ../.data/benchmark/housesOutputGo.txt
+   ./houseanalyzer.exe ./data/housesInput.csv ./data/benchmark/housesOutputGo.txt
    end_time_go=$(date +%s%N)
    total_time_go=$((total_time_go + end_time_go - start_time_go))
 
