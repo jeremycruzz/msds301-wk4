@@ -2,31 +2,25 @@ package file_test
 
 import (
 	"os"
-	"testing"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
 	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
 	"github.com/jeremycruzz/msds301-wk4.git/internal/file"
 )
 
-func TestFile(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "File Suite")
-}
-
 var _ = Describe("Read", func() {
 	var (
-		fileService    file.Service
-		testData       string
-		tempFilePath   string
+		testData     string
+		tempFilePath string
+		fileService  file.Service
+
 		expectedBlocks []common.Block
 	)
 
 	Context("with a properly formatted csv file", func() {
 		BeforeEach(func() {
-			fileService = file.CreateService()
 			testData = `value,income,age,rooms,bedrooms,pop,hh
 452600,8.3252,41,880,129,322,126
 358500,8.3014,21,7099,1106,2401,1138
@@ -41,6 +35,7 @@ var _ = Describe("Read", func() {
 			_, err = tempFile.WriteString(testData)
 			Expect(err).ToNot(HaveOccurred())
 
+			fileService = file.CreateService(tempFilePath, "")
 			expectedBlocks = []common.Block{
 				{
 					Value:      452600,
@@ -75,7 +70,7 @@ var _ = Describe("Read", func() {
 		It("should return a slice of Blocks with the information", func() {
 
 			// execute
-			blocks, err := fileService.Read(tempFilePath)
+			blocks, err := fileService.Read()
 
 			// assert
 			Expect(err).ToNot(HaveOccurred())
@@ -86,7 +81,6 @@ var _ = Describe("Read", func() {
 
 	Context("with a csv file with the wrong number of fields", func() {
 		BeforeEach(func() {
-			fileService = file.CreateService()
 			testData = `value,income,age,rooms,bedrooms,pop,hh
 452600,41,880,129,322,126
 `
@@ -97,13 +91,14 @@ var _ = Describe("Read", func() {
 			defer tempFile.Close()
 
 			_, err = tempFile.WriteString(testData)
+			fileService = file.CreateService(tempFilePath, "")
 			Expect(err).ToNot(HaveOccurred())
 		})
 
 		It("should return an error", func() {
 
 			// execute
-			blocks, err := fileService.Read(tempFilePath)
+			blocks, err := fileService.Read()
 
 			// assert
 			Expect(blocks).To(BeNil())
@@ -114,7 +109,6 @@ var _ = Describe("Read", func() {
 
 	Context("with a csv file with improperly formatted fields", func() {
 		BeforeEach(func() {
-			fileService = file.CreateService()
 			testData = `value,income,age,rooms,bedrooms,pop,hh
 452600,8.3252,41,880,one-hundred,322,126
 `
@@ -124,6 +118,7 @@ var _ = Describe("Read", func() {
 			tempFilePath = tempFile.Name()
 			defer tempFile.Close()
 
+			fileService = file.CreateService(tempFilePath, "")
 			_, err = tempFile.WriteString(testData)
 			Expect(err).ToNot(HaveOccurred())
 		})
@@ -131,7 +126,7 @@ var _ = Describe("Read", func() {
 		It("should return an error", func() {
 
 			// execute
-			blocks, err := fileService.Read(tempFilePath)
+			blocks, err := fileService.Read()
 
 			// assert
 			Expect(blocks).To(BeNil())

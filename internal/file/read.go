@@ -9,10 +9,10 @@ import (
 	"github.com/jeremycruzz/msds301-wk4.git/internal/common"
 )
 
-func (service) Read(filepath string) ([]common.Block, error) {
+func (s service) Read() ([]common.Block, error) {
 
 	// open file
-	file, err := os.Open(filepath)
+	file, err := os.Open(s.readFrom)
 	if err != nil {
 		return nil, err
 	}
